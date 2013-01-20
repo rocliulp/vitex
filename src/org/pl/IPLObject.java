@@ -1,5 +1,4 @@
 package org.pl;
 
-public interface PLObject {
-	int Intropsect ();
+public interface IPLObject {
 }

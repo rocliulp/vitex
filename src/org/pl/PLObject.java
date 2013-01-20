@@ -1,8 +1,9 @@
 package org.pl;
 
+import org.pl.ErrorCode;
+
 public class PLObject {
-	public static main (String argv []) {
-		if (argv == null) return;
-		return;
+	public static void main (String args []) {
+		System.exit (ErrorCode.EC_NOT_IMPLEMENTED);
 	}
 }
