@@ -1,4 +1,4 @@
 package org.pl;
 
-public class Log implements ILog{
+public class Log extends Object implements ILog{
 }

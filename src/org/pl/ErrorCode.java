@@ -1,6 +1,6 @@
 package org.pl;
 
-public class ErrorCode extends PLObject {
+public class ErrorCode extends Object {
 	private ErrorCode () throws CanNotInstantiateStaticClassException {
 		throw new CanNotInstantiateStaticClassException ();
 	}

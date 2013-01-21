@@ -1,6 +1,6 @@
 package org.pl;
 
-public class Logger extends PLObject implements ILogger {
+public class Logger extends Object implements ILogger {
 /*
  * @ interface ILogger section {
 */
