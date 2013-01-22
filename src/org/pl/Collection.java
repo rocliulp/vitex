@@ -1,6 +1,6 @@
 package org.pl;
 
-public class Collection <T> {
-	int size;
-	T array [];
+import org.pl.Object;
+
+public class Collection <T> extends Object {
 }

@@ -1,6 +1,7 @@
 package org.pl;
 
 import org.pl.ErrorCode;
+import org.pl.Object;
 
 public class CollBlock <T> extends Object implements ICollBlock <T>{
 /*

@@ -1,4 +1,4 @@
 package org.pl;
 
-public interface IPLObject {
+public interface IObject {
 }

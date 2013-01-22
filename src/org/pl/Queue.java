@@ -1,6 +1,6 @@
 package org.pl;
 
-public class Queue <T> {
-	int size = 0;
-	T array [] = null;
+import org.pl.Object;
+
+public class Queue <T> extends Object {
 }

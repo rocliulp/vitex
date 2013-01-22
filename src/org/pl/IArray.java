@@ -1,5 +1,11 @@
 package org.pl;
 
+import org.pl.Integer;
+
+/*
+ * @summary This is the interface of Array object.
+ * @param T Parameter as the generic type.
+*/
 public interface IArray <T> {
 	int GetCapacity (Integer capacity);
 	int GetSize (Integer size);

@@ -1,5 +1,7 @@
 package org.pl;
 
+import org.pl.Object;
+
 public class Logger extends Object implements ILogger {
 /*
  * @ interface ILogger section {

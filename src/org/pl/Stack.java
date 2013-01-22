@@ -1,6 +1,6 @@
 package org.pl;
 
-public class Stack <T> {
-	private int size;
-	private T array [];
+import org.pl.Object;
+
+public class Stack <T> extends Object {
 }
