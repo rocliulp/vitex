@@ -8,7 +8,7 @@ import org.pl.Integer;
 */
 public interface IArray <T> {
 	int GetCapacity (Integer capacity);
-	int GetLength (Integer size);
+	int GetCount (Integer size);
 	int GetAt (T obj, int pos);
 	int SetAt (T obj, int pos);
 }

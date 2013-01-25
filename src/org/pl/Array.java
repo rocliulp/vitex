@@ -12,7 +12,7 @@ public class Array <T> extends Object implements IArray <T> {
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 
-	public int GetLength (Integer size) {
+	public int GetCount (Integer size) {
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 
