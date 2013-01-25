@@ -2,21 +2,17 @@ package org.pl;
 
 import org.pl.ErrorCode;
 import org.pl.Array;
-import org.pl.IListNode;
+import org.pl.ILinkedListNode;
 
-public class CollNode <T> extends Array <T> implements IListNode <T>{
+public class CollNode <T> extends Array <T> implements ILinkedListNode <T>{
 /*
- * @ interface IListNode {
+ * @ interface ILinkedListNode {
 */
-	public int GetSuccessor (IListNode <T> successor) {
-		// TODO:
-		return ErrorCode.EC_NOT_IMPLEMENTED;
-	}
-	public int GetPredecessor (IListNode <T> predecessor) {
+	public int GetPredecessor (ILinkedListNode <T> predecessor) {
 		// TODO:
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 /*
- * @ interface IListNode }
+ * @ interface ILinkedListNode }
 */
 }

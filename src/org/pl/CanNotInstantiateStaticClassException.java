@@ -1,6 +1,6 @@
 package org.pl;
 
-import java.lang.Exception;
+import org.pl.Exception;
 
 public class CanNotInstantiateStaticClassException extends Exception {
 }
