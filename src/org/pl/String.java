@@ -2,26 +2,25 @@ package org.pl;
 
 import org.pl.Data;
 import org.pl.Boolean;
-import org.pl.String;
 
-public final class Integer extends Data {
+public final class String extends Data {
   /*
    * @ Private members
    */
-  private int integer;
+  private java.lang.String string;
 
   /*
    * @ Constructor
    */
-  public Integer (int integer) {
-    this.integer = integer;
+  public String (java.lang.String string) {
+    this.string = new java.lang.String (string);
   }
-
+  
   /*
    * @ IData
    */
   public int ToString (String string) {
-    string = new String (java.lang.String.valueOf (integer));
+    string = new String (this.string);
     return ErrorCode.EC_OK;
   }
 
@@ -35,7 +34,7 @@ public final class Integer extends Data {
   }
 
   public int SmallerThan (Boolean result, IComparable obj) {
-    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    if (obj == null ) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }

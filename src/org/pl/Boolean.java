@@ -1,28 +1,35 @@
 package org.pl;
 
 import org.pl.Data;
-import org.pl.Boolean;
 import org.pl.String;
 
-public final class Integer extends Data {
+public final class Boolean extends Data {
   /*
    * @ Private members
    */
-  private int integer;
+  private boolean bool;
 
   /*
    * @ Constructor
    */
-  public Integer (int integer) {
-    this.integer = integer;
+  public Boolean (boolean bool) {
+    this.bool = bool;
   }
 
   /*
    * @ IData
    */
   public int ToString (String string) {
-    string = new String (java.lang.String.valueOf (integer));
-    return ErrorCode.EC_OK;
+    if (bool == true) {
+      string = new String ("TRUE");
+      return ErrorCode.EC_OK;
+    } else if (bool == false) {
+      string = new String ("FALSE");
+      return ErrorCode.EC_OK;
+    } else {
+      string = null;
+      return ErrorCode.EC_IMPOSSIBLE_CASE;
+    }
   }
 
   /*
