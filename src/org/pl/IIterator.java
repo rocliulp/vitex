@@ -1,4 +1,4 @@
-package org.pl.collection;
+package org.pl;
 
 public interface IIterator <T> {
 }
