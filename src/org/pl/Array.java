@@ -1,9 +1,5 @@
 package org.pl;
 
-import org.pl.Object;
-import org.pl.Integer;
-import org.pl.ErrorCode;
-
 public class Array <T> extends Object implements IArray <T> {
 /*
  * @ interface IArray <T> {

@@ -1,9 +1,5 @@
 package org.pl;
 
-import org.pl.Data;
-import org.pl.Boolean;
-import org.pl.String;
-
 public final class Integer extends Data {
   /*
    * @ Private members

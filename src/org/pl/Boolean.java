@@ -1,8 +1,5 @@
 package org.pl;
 
-import org.pl.Data;
-import org.pl.String;
-
 public final class Boolean extends Data {
   /*
    * @ Private members

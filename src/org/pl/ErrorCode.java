@@ -1,6 +1,6 @@
 package org.pl;
 
-import org.pl.Object;
+import org.pl.exception.CanNotInstantiateStaticClassException;
 
 public class ErrorCode extends Object {
 	private ErrorCode () throws CanNotInstantiateStaticClassException {
