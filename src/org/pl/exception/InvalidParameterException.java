@@ -7,10 +7,6 @@ public class InvalidParameterException extends Exception {
    * @ Constructor
    */
   public InvalidParameterException (java.lang.String errorMsg) {
-    try {
-      super (ErrorCode.EC_INVALID_PARAMETER, errorMsg);
-    } catch (Exception e) {
-      throw e;
-    }
+    super (ErrorCode.EC_INVALID_PARAMETER, errorMsg);
   }
 }

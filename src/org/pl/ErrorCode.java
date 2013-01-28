@@ -4,7 +4,8 @@ import org.pl.exception.CanNotInstantiateStaticClassException;
 
 public final class ErrorCode extends Object {
 	private ErrorCode () throws CanNotInstantiateStaticClassException {
-		throw new CanNotInstantiateStaticClassException ();
+		throw new
+      CanNotInstantiateStaticClassException ("ErrorCode is a static class.");
 	}
 
 	public static final int EC_OK = 0;
@@ -22,6 +23,8 @@ public final class ErrorCode extends Object {
   public static final int EC_IMPOSSIBLE_CASE = 7;
 
   public static final int EC_CAN_NOT_INSTANTIATE_STATIC_CLASS_EXCEPTION = 8;
+
+  public static final int EC_FAILED_CONVERTING = 9;
 
 	public static void main (String args []) {
 		try {
@@ -42,6 +45,7 @@ public final class ErrorCode extends Object {
     System.out.println ("EC_IMPOSSIBLE_CASE: " + EC_IMPOSSIBLE_CASE);
     System.out.println ("EC_CAN_NOT_INSTANTIATE_STATIC_CLASS_EXCEPTION" +
       EC_CAN_NOT_INSTANTIATE_STATIC_CLASS_EXCEPTION);
+    System.out.println ("EC_FAILED_CONVERTING: " + EC_FAILED_CONVERTING);
 
 		System.exit (EC_OK);
 	}

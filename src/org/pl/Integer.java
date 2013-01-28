@@ -1,5 +1,7 @@
 package org.pl;
 
+import org.pl.exception.InvalidConvertingException;
+
 public final class Integer extends Data {
   /*
    * @ Private members
@@ -19,6 +21,10 @@ public final class Integer extends Data {
   public int ToString (String string) {
     string = new String (java.lang.String.valueOf (integer));
     return ErrorCode.EC_OK;
+  }
+
+  public int ToInt () throws InvalidConvertingException {
+    return integer;
   }
 
   /*

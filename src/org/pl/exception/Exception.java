@@ -14,8 +14,13 @@ public class Exception extends java.lang.Exception
   private java.lang.String errorMsg = "Unexpected exception.";
 
   /*
-   * @ Constructor
+   * @ Constructors
    */
+  public Exception () {
+    errorCode = ErrorCode.EC_UNEXPECTED_EXCEPTION;
+    errorMsg = "Unexpected exception.";
+  }
+
   public Exception (int errorCode, java.lang.String errorMsg) {
     this.errorCode = errorCode;
     this.errorMsg = errorMsg;

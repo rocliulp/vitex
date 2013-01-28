@@ -2,6 +2,7 @@ package org.pl;
 
 import org.pl.Data;
 import org.pl.Boolean;
+import org.pl.exception.InvalidConvertingException;
 
 public final class String extends Data {
   /*
@@ -22,6 +23,10 @@ public final class String extends Data {
   public int ToString (String string) {
     string = new String (this.string);
     return ErrorCode.EC_OK;
+  }
+
+  public int ToInt () throws InvalidConvertingException {
+    throw new InvalidConvertingException ("Can not convert String to Int");
   }
 
   /*

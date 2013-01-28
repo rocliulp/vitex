@@ -1,5 +1,7 @@
 package org.pl;
 
+import org.pl.exception.InvalidConvertingException;
+
 public final class Boolean extends Data {
   /*
    * @ Private members
@@ -27,6 +29,10 @@ public final class Boolean extends Data {
       string = null;
       return ErrorCode.EC_IMPOSSIBLE_CASE;
     }
+  }
+
+  public int ToInt () throws InvalidConvertingException {
+    throw new InvalidConvertingException ("Can not convert Boolean to Int");
   }
 
   /*
