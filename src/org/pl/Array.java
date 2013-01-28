@@ -1,14 +1,10 @@
 package org.pl;
 
 public class Array <T> extends Object implements IArray <T> {
-/*
- * @ interface IArray <T> {
-*/
+  /*
+   * @ IArray <T>
+  */
 	public int GetCapacity (Integer capacity) {
-		return ErrorCode.EC_NOT_IMPLEMENTED;
-	}
-
-	public int GetCount (Integer size) {
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 
@@ -16,10 +12,14 @@ public class Array <T> extends Object implements IArray <T> {
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 
+  /*
+   * @ IArbitraryAccessor
+   */
+	public int GetCount (Integer count) {
+		return ErrorCode.EC_NOT_IMPLEMENTED;
+	}
+
 	public int GetAt (T obj, int pos) {
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
-/*
- * @ interface IArray <T> }
-*/
 }
