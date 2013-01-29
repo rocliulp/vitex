@@ -1,7 +1,7 @@
 package org.pl.collection;
 
 import org.pl.Iterator;
-import org.pl.IArbitraryAccessor;
+import org.pl.IElementAccessible;
 import org.pl.exception.OutOfRangeException;
 import org.pl.exception.NullParameterException;
 import org.pl.exception.Exception;
@@ -11,9 +11,9 @@ public class Enumerator <T> extends Iterator <T> {
   /*
    * @ Constructor
    */
-  public Enumerator (IArbitraryAccessor <T> aAccessor) throws
+  public Enumerator (IElementAccessible <T> eAccessor) throws
     OutOfRangeException, NullParameterException, Exception,
     InvalidConvertingException {
-    super (1, aAccessor);
+    super (1, eAccessor);
   }
 }

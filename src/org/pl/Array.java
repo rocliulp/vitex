@@ -13,7 +13,7 @@ public class Array <T> extends Object implements IArray <T> {
 	}
 
   /*
-   * @ IArbitraryAccessor
+   * @ IElementAccessible
    */
 	public int GetCount (Integer count) {
 		return ErrorCode.EC_NOT_IMPLEMENTED;

@@ -1,6 +1,6 @@
 package org.pl.collection;
 
-import org.pl.IArbitraryAccessor;
+import org.pl.IElementAccessible;
 
-public interface ICollection <T> extends IArbitraryAccessor <T> {
+public interface ICollection <T> extends IElementAccessible <T> {
 }

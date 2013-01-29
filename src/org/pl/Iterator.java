@@ -12,19 +12,19 @@ public class Iterator <T> extends Object implements IIterator <T> {
    */
   private int step = 1;
   private int pos = -1;
-  private IArbitraryAccessor aAccessor = null;
+  private IElementAccessible eAccessor = null;
 
   /*
    * @ Constructor
    */
-  public Iterator (int step, IArbitraryAccessor <T> aAccessor)
+  public Iterator (int step, IElementAccessible <T> eAccessor)
     throws OutOfRangeException, NullParameterException, Exception {
     if (step < 1) throw new OutOfRangeException ("Step is invalid."); 
-    if (aAccessor == null)
+    if (eAccessor == null)
       throw new NullParameterException ("aAccesor is invalid.");
     
     Integer aaCount = null;
-    int ret = aAccessor.GetCount (aaCount);
+    int ret = eAccessor.GetCount (aaCount);
     if (ret != ErrorCode.EC_OK)
       throw new Exception (ret, "Failed get the element count by iterator");
     int count = 0;
@@ -38,7 +38,7 @@ public class Iterator <T> extends Object implements IIterator <T> {
       throw new OutOfRangeException ("step or aAccessor is invalid.");
 
     this.step = step;
-    aAccessor = aAccessor;
+    eAccessor = eAccessor;
   }
 
   /*
@@ -54,7 +54,7 @@ public class Iterator <T> extends Object implements IIterator <T> {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int GetArbitraryAccessor (IArbitraryAccessor aAccessor) {
+  public int GetElementAccessor (IElementAccessible eAccessor) {
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
