@@ -35,6 +35,10 @@ public final class Boolean extends Data {
     throw new InvalidConvertingException ("Can not convert Boolean to Int");
   }
 
+  public boolean ToBoolean () throws InvalidConvertingException {
+    return bool;
+  }
+
   /*
    * @ IComparable
    */

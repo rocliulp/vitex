@@ -27,6 +27,11 @@ public final class Integer extends Data {
     return integer;
   }
 
+  public boolean ToBoolean () throws InvalidConvertingException {
+    throw
+      new InvalidConvertingException ("Can not convert Integer to boolean.");
+  }
+
   /*
    * @ IComparable
    */

@@ -26,7 +26,12 @@ public final class String extends Data {
   }
 
   public int ToInt () throws InvalidConvertingException {
-    throw new InvalidConvertingException ("Can not convert String to Int");
+    throw new InvalidConvertingException ("Can not convert String to Int.");
+  }
+
+  public boolean ToBoolean () throws InvalidConvertingException {
+    throw
+      new InvalidConvertingException ("Can not convert String to Boolean.");
   }
 
   /*
