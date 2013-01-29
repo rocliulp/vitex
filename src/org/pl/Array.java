@@ -2,7 +2,7 @@ package org.pl;
 
 import org.pl.exception.OutOfRangeException;
 
-public class Array <T> extends Object implements IArray <T> {
+public final class Array <T> extends Object implements IArray <T> {
   /*
    * @ Private members
    */
@@ -24,21 +24,45 @@ public class Array <T> extends Object implements IArray <T> {
    * @ IArray <T>
   */
 	public int GetCapacity (Integer capacity) {
-		return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (array == null) {
+      try {
+        capacity = new Integer (0);
+      } catch (Exception e) {
+        capacity = null;
+        return ErrorCode.EC_OUT_OF_MEMORY;
+      }
+    } else {
+      try {
+        capacity = new Integer (this.capacity);
+      } catch (Exception e) {
+        capacity = null;
+        return ErrorCode.EC_OUT_OF_MEMORY;
+      }
+    }
+    return ErrorCode.EC_OK;
 	}
 
 	public int SetAt (T obj, int pos) {
-		return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (pos < 0) return ErrorCode.EC_OUT_OF_RANGE;
+    if (pos > capacity - 1) return ErrorCode.EC_OUT_OF_RANGE;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+
+    array [pos] = obj;
+		return ErrorCode.EC_OK;
 	}
 
   /*
    * @ IElementAccessible
+   * @ TODO: Check if this is necessary.
    */
 	public int GetCount (Integer count) {
-		return ErrorCode.EC_NOT_IMPLEMENTED;
+		return GetCapacity (count);
 	}
 
 	public int GetAt (T obj, int pos) {
+    if (pos < 0) return ErrorCode.EC_OUT_OF_RANGE;
+    if (pos > capacity - 1) return ErrorCode.EC_OUT_OF_RANGE;
+    obj = array [pos];
 		return ErrorCode.EC_NOT_IMPLEMENTED;
 	}
 }
