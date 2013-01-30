@@ -2,7 +2,7 @@ package org.pl;
 
 import org.pl.exception.OutOfRangeException;
 
-public final class Array <T> extends Object implements IArray <T> {
+public class Array <T> extends Object implements IArray <T> {
   /*
    * @ Private members
    */

@@ -8,8 +8,8 @@ public abstract class Collection <T> extends Object implements ICollection <T> {
   /*
    * Private members
    */
-  protected CollNode item = null;
-  protected nodeCapacity = 100;
+  protected CollNode <T> item = null;
+  protected int nodeCapacity = 100;
   protected int count = 0;
 
   /*
