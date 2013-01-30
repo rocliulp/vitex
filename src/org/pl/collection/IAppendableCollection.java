@@ -1,5 +1,5 @@
 package org.pl.collection;
 
-public interface IAppendableCollection {
-  // TODO:
+public interface IAppendableCollection <T> {
+  int Append (T obj);
 }
