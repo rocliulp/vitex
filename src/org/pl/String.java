@@ -20,18 +20,14 @@ public final class String extends Data {
   /*
    * @ IData
    */
-  public int ToString (String string) {
-    string = new String (this.string);
+  public int ToString (java.lang.String string) {
+    try {
+      string = new java.lang.String (this.string);
+    } catch (Exception e) {
+      string = null;
+      return ErrorCode.EC_OUT_OF_MEMORY;
+    }
     return ErrorCode.EC_OK;
-  }
-
-  public int ToInt () throws InvalidConvertingException {
-    throw new InvalidConvertingException ("Can not convert String to Int.");
-  }
-
-  public boolean ToBoolean () throws InvalidConvertingException {
-    throw
-      new InvalidConvertingException ("Can not convert String to Boolean.");
   }
 
   /*

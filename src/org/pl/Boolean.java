@@ -18,25 +18,27 @@ public final class Boolean extends Data {
   /*
    * @ IData
    */
-  public int ToString (String string) {
+  public int ToString (java.lang.String string) {
     if (bool == true) {
-      string = new String ("TRUE");
+      try {
+        string = new java.lang.String ("TRUE");
+      } catch (Exception e) {
+        string = null;
+        return ErrorCode.EC_OUT_OF_MEMORY;
+      }
       return ErrorCode.EC_OK;
     } else if (bool == false) {
-      string = new String ("FALSE");
+      try {
+        string = new java.lang.String ("FALSE");
+      } catch (Exception e) {
+        string = null;
+        return ErrorCode.EC_OUT_OF_MEMORY;
+      }
       return ErrorCode.EC_OK;
     } else {
       string = null;
       return ErrorCode.EC_IMPOSSIBLE_CASE;
     }
-  }
-
-  public int ToInt () throws InvalidConvertingException {
-    throw new InvalidConvertingException ("Can not convert Boolean to Int");
-  }
-
-  public boolean ToBoolean () throws InvalidConvertingException {
-    return bool;
   }
 
   /*

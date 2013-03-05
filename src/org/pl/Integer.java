@@ -2,7 +2,7 @@ package org.pl;
 
 import org.pl.exception.InvalidConvertingException;
 
-public final class Integer extends Data {
+public final class Integer extends Data implements IInteger {
   /*
    * @ Private members
    */
@@ -18,18 +18,8 @@ public final class Integer extends Data {
   /*
    * @ IData
    */
-  public int ToString (String string) {
-    string = new String (java.lang.String.valueOf (integer));
-    return ErrorCode.EC_OK;
-  }
-
-  public int ToInt () throws InvalidConvertingException {
-    return integer;
-  }
-
-  public boolean ToBoolean () throws InvalidConvertingException {
-    throw
-      new InvalidConvertingException ("Can not convert Integer to boolean.");
+  public int ToString (java.lang.String string) {
+    return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
   /*
@@ -72,5 +62,12 @@ public final class Integer extends Data {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
+  }
+
+  /*
+   * IInteger
+   */
+  public int ToInt () {
+    return integer;
   }
 }

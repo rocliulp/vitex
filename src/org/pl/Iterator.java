@@ -27,13 +27,7 @@ public class Iterator <T> extends Object implements IIterator <T> {
     int ret = eAccessor.GetCount (aaCount);
     if (ret != ErrorCode.EC_OK)
       throw new Exception (ret, "Failed get the element count by iterator");
-    int count = 0;
-    try {
-      count = aaCount.ToInt ();
-    } catch (Exception e) {
-      throw new Exception (ErrorCode.EC_FAILED_CONVERTING,
-        "Failed converting from Integer to Int.");
-    }
+    int count = aaCount.ToInt ();
     if (step > count)
       throw new OutOfRangeException ("step or aAccessor is invalid.");
 
