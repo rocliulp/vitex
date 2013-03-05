@@ -53,7 +53,7 @@ public class Iterator <T> extends Object implements IIterator <T> {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int MoveNext (Boolean end) {
+  public int MoveNext (boolean end) {
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }

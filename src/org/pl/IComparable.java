@@ -1,8 +1,8 @@
 package org.pl;
 
 public interface IComparable extends IEquable {
-  int GreaterThan (Boolean result, IComparable obj);
-  int SmallerThan (Boolean result, IComparable obj);
-  int GreaterEqual (Boolean result, IComparable obj);
-  int SmallerEqual (Boolean result, IComparable obj);
+  int GreaterThan (boolean result, IComparable obj);
+  int SmallerThan (boolean result, IComparable obj);
+  int GreaterEqual (boolean result, IComparable obj);
+  int SmallerEqual (boolean result, IComparable obj);
 }

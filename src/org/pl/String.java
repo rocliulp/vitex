@@ -1,9 +1,5 @@
 package org.pl;
 
-import org.pl.Data;
-import org.pl.Boolean;
-import org.pl.exception.InvalidConvertingException;
-
 public final class String extends Data {
   /*
    * @ Private members
@@ -33,25 +29,25 @@ public final class String extends Data {
   /*
    * @ IComparable
    */
-  public int GreaterThan (Boolean result, IComparable obj) {
+  public int GreaterThan (boolean result, IComparable obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int SmallerThan (Boolean result, IComparable obj) {
+  public int SmallerThan (boolean result, IComparable obj) {
     if (obj == null ) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int GreaterEqual (Boolean result, IComparable obj) {
+  public int GreaterEqual (boolean result, IComparable obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int SmallerEqual (Boolean result, IComparable obj) {
+  public int SmallerEqual (boolean result, IComparable obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
@@ -60,13 +56,13 @@ public final class String extends Data {
   /*
    * @ IEquable
    */
-  public int Equals (Boolean result, IEquable obj) {
+  public int Equals (boolean result, IEquable obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int NotEquals (Boolean result, IEquable obj) {
+  public int NotEquals (boolean result, IEquable obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
