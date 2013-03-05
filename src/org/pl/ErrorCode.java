@@ -17,16 +17,17 @@ public final class ErrorCode extends Object {
   public static final int EC_INVALID_PARAMETER = 3;
   public static final int EC_NULL_PARAMETER = 4;
 
-  public static final int EC_NULL_OBJECT = 5;
+  public static final int EC_INVALID_OBJECT = 5;
+  public static final int EC_NULL_OBJECT = 6;
 	
-  public static final int EC_OUT_OF_RANGE = 6;
-	public static final int EC_OUT_OF_MEMORY = 7;
+  public static final int EC_OUT_OF_RANGE = 7;
+	public static final int EC_OUT_OF_MEMORY = 8;
   
-  public static final int EC_IMPOSSIBLE_CASE = 8;
+  public static final int EC_IMPOSSIBLE_CASE = 9;
 
-  public static final int EC_CAN_NOT_INSTANTIATE_STATIC_CLASS_EXCEPTION = 9;
+  public static final int EC_CAN_NOT_INSTANTIATE_STATIC_CLASS_EXCEPTION = 10;
 
-  public static final int EC_FAILED_CONVERTING = 10;
+  public static final int EC_FAILED_CONVERTING = 11;
 
 	public static void main (String args []) {
 		try {

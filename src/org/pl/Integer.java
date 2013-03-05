@@ -79,7 +79,13 @@ public final class Integer extends Data implements IInteger {
   /*
    * IInteger
    */
-  public int ToInt () {
-    return value;
+  public int ToInt (java.lang.Integer value) {
+    try {
+      value = new java.lang.Integer (this.value);
+    } catch (Exception e) {
+      value = null;
+      return ErrorCode.EC_OUT_OF_MEMORY;
+    }
+    return ErrorCode.EC_OK;
   }
 }

@@ -30,6 +30,7 @@ public class IntegerID extends ID implements IInteger {
       string = null;
       return ErrorCode.EC_OUT_OF_MEMORY;
     }
+    
     return ErrorCode.EC_OK;
   }
 
@@ -55,32 +56,105 @@ public class IntegerID extends ID implements IInteger {
   }
 
   public int GreaterThan (boolean result, IComparable obj) {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    boolean isIID = obj instanceof IntegerID;
+    if (!isIID) return ErrorCode.EC_INVALID_PARAMETER;
+    IntegerID cmpObj = (IntegerID) obj;
+    if (cmpObj.value < 0) return ErrorCode.EC_INVALID_PARAMETER;
+    
+    if (value > cmpObj.value) {
+      result = true;
+    } else {
+      result = false;
+    }
+    
+    return ErrorCode.EC_OK;
   }
 
   public int SmallerEqual (boolean result, IComparable obj) {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    boolean isIID = obj instanceof IntegerID;
+    if (!isIID) return ErrorCode.EC_INVALID_PARAMETER;
+    IntegerID cmpObj = (IntegerID) obj;
+    if (cmpObj.value < 0) return ErrorCode.EC_INVALID_PARAMETER;
+
+    if (value <= cmpObj.value) {
+      result = true;
+    } else {
+      result = false;
+    }
+
+    return ErrorCode.EC_OK;
   }
 
   public int GreaterEqual (boolean result, IComparable obj) {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    boolean isIID = obj instanceof IntegerID;
+    if (!isIID) return ErrorCode.EC_INVALID_PARAMETER;
+    IntegerID cmpObj = (IntegerID) obj;
+    if (cmpObj.value < 0) return ErrorCode.EC_INVALID_PARAMETER;
+    
+    if (value >= cmpObj.value) {
+      result = true;
+    } else {
+      result = false;
+    }
+    
+    return ErrorCode.EC_OK;
   }
 
   /*
    * IEquable
    */
   public int Equals (boolean result, IEquable obj) {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    boolean isIID = obj instanceof IntegerID;
+    if (!isIID) return ErrorCode.EC_INVALID_PARAMETER;
+    IntegerID cmpObj = (IntegerID) obj;
+    if (cmpObj.value < 0) return ErrorCode.EC_INVALID_PARAMETER;
+
+    if (value == cmpObj.value) {
+      result = true;
+    } else {
+      result = false;
+    }
+
+    return ErrorCode.EC_OK;
   }
 
   public int NotEquals (boolean result, IEquable obj) {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
+    boolean isIID = obj instanceof IntegerID;
+    if (!isIID) return ErrorCode.EC_INVALID_PARAMETER;
+    IntegerID cmpObj = (IntegerID) obj;
+    if (cmpObj.value < 0) return ErrorCode.EC_INVALID_PARAMETER;
+
+    if (value != cmpObj.value) {
+      result = true;
+    } else {
+      result = false;
+    }
+
+    return ErrorCode.EC_OK;
   }
 
   /*
    * IInteger
    */
-  public int ToInt () {
-    return value;
+  public int ToInt (java.lang.Integer jlValue) {
+    if (value < 0) return ErrorCode.EC_NULL_OBJECT;
+    
+    try {
+    } catch (Exception e) {
+      jlValue = null;
+      return ErrorCode.EC_OUT_OF_MEMORY;
+    }
+
+    return ErrorCode.EC_OK;
   }
 }

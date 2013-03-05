@@ -4,7 +4,6 @@ import org.pl.exception.OutOfRangeException;
 import org.pl.exception.NullParameterException;
 import org.pl.exception.Exception;
 import org.pl.exception.InvalidConvertingException;
-import org.pl.Integer;
 
 public class Iterator <T> extends Object implements IIterator <T> {
   /*
@@ -23,11 +22,10 @@ public class Iterator <T> extends Object implements IIterator <T> {
     if (eAccessor == null)
       throw new NullParameterException ("aAccesor is invalid.");
     
-    Integer aaCount = null;
-    int ret = eAccessor.GetCount (aaCount);
+    java.lang.Integer count = null;
+    int ret = eAccessor.GetCount (count);
     if (ret != ErrorCode.EC_OK)
       throw new Exception (ret, "Failed get the element count by iterator");
-    int count = aaCount.ToInt ();
     if (step > count)
       throw new OutOfRangeException ("step or aAccessor is invalid.");
 

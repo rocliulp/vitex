@@ -1,7 +1,6 @@
 package org.pl.collection;
 
 import org.pl.Object;
-import org.pl.Integer;
 import org.pl.ErrorCode;
 
 public abstract class Collection <T> extends Object implements ICollection <T> {

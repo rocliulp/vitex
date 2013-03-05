@@ -23,17 +23,17 @@ public class Array <T> extends Object implements IArray <T> {
   /*
    * @ IArray <T>
   */
-	public int GetCapacity (Integer capacity) {
+	public int GetCapacity (java.lang.Integer capacity) {
     if (array == null) {
       try {
-        capacity = new Integer (0);
+        capacity = new java.lang.Integer (0);
       } catch (Exception e) {
         capacity = null;
         return ErrorCode.EC_OUT_OF_MEMORY;
       }
     } else {
       try {
-        capacity = new Integer (this.capacity);
+        capacity = new java.lang.Integer (this.capacity);
       } catch (Exception e) {
         capacity = null;
         return ErrorCode.EC_OUT_OF_MEMORY;
@@ -55,7 +55,7 @@ public class Array <T> extends Object implements IArray <T> {
    * @ IElementAccessible
    * @ TODO: Check if this is necessary.
    */
-	public int GetCount (Integer count) {
+	public int GetCount (java.lang.Integer count) {
 		return GetCapacity (count);
 	}
 
