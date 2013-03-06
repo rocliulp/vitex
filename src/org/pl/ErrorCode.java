@@ -29,6 +29,9 @@ public final class ErrorCode extends Object {
 
   public static final int EC_FAILED_CONVERTING = 11;
 
+  public static final int EC_FAILED_READING_FILE = 12;
+  public static final int EC_INVALID_FILE_FORMAT = 13;
+
 	public static void main (String args []) {
 		try {
 			ErrorCode ec = new ErrorCode ();
