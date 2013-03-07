@@ -11,7 +11,7 @@ extends PLSQLStatement implements ISelectStatement {
   /*
    * IPLSQLStatement
    */
-  public int GetSQL (StringBuffer sqlP) {
+  public int GetSQL (StringBuffer sql) {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 }

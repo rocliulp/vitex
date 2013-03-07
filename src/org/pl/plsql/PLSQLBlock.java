@@ -9,10 +9,9 @@ import org.pl.ErrorCode;
 import org.pl.collection.Collection;
 
 public abstract class PLSQLBlock extends Collection implements IPLSQLBlock {
-  public int GetBlockName () {
-    return ErrorCode.EC_NOT_IMPLEMENTED;
-  }
-
+  /*
+   * IPLSQLBlock
+   */
   public int GetBlockBody () {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
