@@ -6,8 +6,8 @@ package org.pl.plsql;
 
 import org.pl.ErrorCode;
 
-public class SelectStatement
-extends PLSQLBlock implements ISelectStatement {
+public class InvokeProcedureStatement
+extends PLSQLBlock implements IInvokeProcedureStatement {
   /*
    * IPLSQLStatement
    */
