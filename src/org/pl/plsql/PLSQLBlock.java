@@ -6,9 +6,10 @@ package org.pl.plsql;
 
 import org.pl.Object;
 import org.pl.ErrorCode;
-import org.pl.collection.Collection;
+import org.pl.collection.AppendableCollection;
 
-public abstract class PLSQLBlock extends Collection implements IPLSQLBlock {
+public abstract class PLSQLBlock
+extends AppendableCollection implements IPLSQLBlock {
   /*
    * IPLSQLBlock
    */

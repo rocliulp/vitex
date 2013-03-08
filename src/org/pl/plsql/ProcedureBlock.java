@@ -10,7 +10,7 @@ public class ProcedureBlock extends PLSQLBlock implements IProcedureStatement {
   /*
    * IProcedureStatement
    */
-  public int GetProcedureName () {
+  public int GetProcedureName (StringBuffer name) {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 

@@ -5,6 +5,6 @@
 package org.pl.plsql;
 
 public interface IProcedureStatement {
-  int GetProcedureName ();
+  int GetProcedureName (StringBuffer name);
   int GetProcedureParameters ();
 }

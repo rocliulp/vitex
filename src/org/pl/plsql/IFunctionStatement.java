@@ -5,7 +5,7 @@
 package org.pl.plsql;
 
 public interface IFunctionStatement {
-  int GetFunctionName ();
+  int GetFunctionName (StringBuffer name);
   int GetFunctionParameters ();
-  int GetFunctionReturn ();
+  int GetFunctionReturn (FunctionReturnDeclaration retDec);
 }

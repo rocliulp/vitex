@@ -9,7 +9,6 @@ public class AppendableCollection <T> extends Collection <T>
    */
   public int Append (T obj) {
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
-    // TODO: Writing
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 }

@@ -10,11 +10,11 @@ public class FunctionBlock extends PLSQLBlock implements IFunctionStatement {
   /*
    * IPLSQLFunctionStatement
    */
-  public int GetFunctionName () {
+  public int GetFunctionName (StringBuffer name) {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int GetFunctionReturn () {
+  public int GetFunctionReturn (FunctionReturnDeclaration retDec) {
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
