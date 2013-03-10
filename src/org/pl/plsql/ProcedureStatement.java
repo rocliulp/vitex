@@ -48,7 +48,7 @@ extends ParametersBlock implements IProcedureStatement {
       return ErrorCode.EC_OUT_OF_MEMORY;
     }
 
-    StringBuffer sb = null;
+    StringBuffer sb = new StringBuffer ();
     int ret = super.GetSQL (sb);
     if (ret != ErrorCode.EC_OK) return ret;
     try {

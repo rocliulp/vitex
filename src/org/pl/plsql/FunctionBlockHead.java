@@ -60,7 +60,7 @@ extends ParametersBlock implements IFunctionStatement {
     }
 
     int ret = 0;
-    StringBuffer sb = null;
+    StringBuffer sb = new StringBuffer ();
     ret = super.GetSQL (sb);
     if (ret != ErrorCode.EC_OK) return ret;
     try {

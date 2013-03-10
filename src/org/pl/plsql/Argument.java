@@ -4,29 +4,31 @@
 
 package org.pl.plsql;
 
-import org.pl.ErrorCode;
 import org.pl.global.Global;
+import org.pl.ErrorCode;
+import org.pl.environment.Environment;
 import org.pl.exception.NullParameterException;
 import org.pl.exception.OutOfMemoryException;
 
-public class ReturnStatement extends PLSQLStatement {
+public class Argument extends PLSQLStatement {
   /*
-   * Private members
+   * Private member
    */
-  private String value;
-  private boolean isString;
+  private String value = null;
+  private boolean isString= false;
 
   /*
    * Constructor
    */
-  public ReturnStatement (String value, boolean isStr)
+  public Argument (String value, boolean isStr)
   throws NullParameterException, OutOfMemoryException {
     if (Global.IsStringNullOrEmpty (value))
-      throw new NullParameterException ("ReturnStatement (~)");
+      throw new NullParameterException ("Argument (~)");
+    
     try {
       this.value = value;
     } catch (Exception e) {
-      throw new OutOfMemoryException ("ReturnStatement (~)");
+      throw new OutOfMemoryException ("Argument (~)");
     }
     isString = isStr;
   }
@@ -36,17 +38,19 @@ public class ReturnStatement extends PLSQLStatement {
    */
   public int GetSQL (StringBuffer sql) {
     if (Global.IsStringNullOrEmpty (value)) return ErrorCode.EC_NULL_OBJECT;
-    String line = null;
+
     try {
+      String line = null;
       if (isString) {
         line = String.format ("\'%s\'", value);
       } else {
         line = String.format ("%s", value);
       }
-      sql.append (line);
+      sql = new StringBuffer (line);
     } catch (Exception e) {
       return ErrorCode.EC_OUT_OF_MEMORY;
     }
+
     return ErrorCode.EC_OK;
   }
 }

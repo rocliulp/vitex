@@ -9,7 +9,7 @@ import org.pl.ErrorCode;
 import org.pl.collection.AppendableCollection;
 
 public abstract class PLSQLBlock
-extends AppendableCollection implements IPLSQLBlock {
+extends AppendableCollection <IPLSQLStatement> implements IPLSQLBlock {
   /*
    * IPLSQLBlock
    */

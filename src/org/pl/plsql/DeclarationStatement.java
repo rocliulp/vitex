@@ -27,7 +27,7 @@ public class DeclarationStatement extends Variable {
       return ErrorCode.EC_OUT_OF_MEMORY;
     }
 
-    StringBuffer sb = null;
+    StringBuffer sb = new StringBuffer ();
     int ret = super.GetSQL (sb);
     try {
       String line = String.format ("%s;%s", sb.toString (), NEW_LINE);

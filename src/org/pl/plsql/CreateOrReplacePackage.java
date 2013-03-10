@@ -49,7 +49,7 @@ extends PLSQLBlock implements ICreateOrReplacePackage {
       IPLSQLStatement stm = null;
       ret = GetAt (stm, i);
       if (ret != ErrorCode.EC_OK) return ret;
-      StringBuffer sb = null;
+      StringBuffer sb = new StringBuffer ();
       ret = stm.GetSQL (sb);
       if (ret != ErrorCode.EC_OK) return ret;
       try {

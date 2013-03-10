@@ -35,7 +35,7 @@ public abstract class ParametersBlock extends PLSQLBlock {
         Parameter param = null;
         ret = GetAt (param, i);
         if (ret != ErrorCode.EC_OK) return ret;
-        StringBuffer sb = null;
+        StringBuffer sb = new StringBuffer ();
         ret = param.GetSQL (sb);
         if (ret != ErrorCode.EC_OK) return ret;
         try {

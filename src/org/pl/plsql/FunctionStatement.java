@@ -72,7 +72,7 @@ extends ParametersBlock implements IFunctionStatement{
       return ErrorCode.EC_OUT_OF_MEMORY;
     }
     int ret = 0;
-    StringBuffer sb = null;
+    StringBuffer sb = new StringBuffer ();
 
     try {
       sql = new StringBuffer ();
