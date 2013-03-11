@@ -7,6 +7,7 @@ package org.pl.plsql;
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
 import org.pl.exception.OutOfMemoryException;
+import org.pl.global.Global;
 
 public class FunctionBlockHead
 extends ParametersBlock implements IFunctionStatement {
@@ -21,13 +22,9 @@ extends ParametersBlock implements IFunctionStatement {
    */
   public FunctionBlockHead (String name, String retType)
     throws NullParameterException, OutOfMemoryException {
-    if (name == null)
+    if (Global.IsStringNullOrEmpty(name))
       throw new NullParameterException ("FunctionBlockHead (~)");
-    if (name == "")
-      throw new NullParameterException ("FunctionBlockHead (~)");
-    if (retType == null)
-      throw new NullParameterException ("FunctionBlockHead (~)");
-    if (retType == "")
+    if (Global.IsStringNullOrEmpty(retType))
       throw new NullParameterException ("FunctionBlockHead (~)");
     try {
       functionName = name;
@@ -41,8 +38,7 @@ extends ParametersBlock implements IFunctionStatement {
    * IPLSQLStatement
    */
   public int GetSQL (StringBuffer sql) {
-    if (functionName == null) return ErrorCode.EC_NULL_OBJECT;
-    if (functionName == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(functionName)) return ErrorCode.EC_NULL_OBJECT;
     String NEW_LINE = System.getProperty ("line.separator");
 
     try {
@@ -88,8 +84,7 @@ extends ParametersBlock implements IFunctionStatement {
    * IFunctionStatement
    */
   public int GetFunctionName (StringBuffer name) {
-    if (functionName == null) return ErrorCode.EC_NULL_OBJECT;
-    if (functionName == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(functionName)) return ErrorCode.EC_NULL_OBJECT;
     try {
       name = new StringBuffer (functionName);
     } catch (Exception e) {

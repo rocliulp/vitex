@@ -6,6 +6,7 @@ package org.pl.plsql;
 
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
+import org.pl.global.Global;
 
 public class Variable extends PLSQLStatement implements IVariable{
   /*
@@ -18,10 +19,8 @@ public class Variable extends PLSQLStatement implements IVariable{
    * Constructor
    */
   public Variable (String name, String type) throws NullParameterException {
-    if (name == null) throw new NullParameterException ("Variable (~)");
-    if (name == "") throw new NullParameterException ("Variable (~)");
-    if (type == null) throw new NullParameterException ("Variable (~)");
-    if (type == "") throw new NullParameterException ("Variable (~)");
+    if (Global.IsStringNullOrEmpty(name)) throw new NullParameterException ("Variable (~)");
+    if (Global.IsStringNullOrEmpty(type)) throw new NullParameterException ("Variable (~)");
     variableName = name;
     variableType = type;
   }
@@ -44,8 +43,7 @@ public class Variable extends PLSQLStatement implements IVariable{
    * IVariable
    */
   public int GetVariableName (StringBuffer name) {
-    if (variableName == null) return ErrorCode.EC_NULL_OBJECT;
-    if (variableName == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(variableName)) return ErrorCode.EC_NULL_OBJECT;
     try {
       name = new StringBuffer (variableName);
     } catch (Exception e) {
@@ -55,8 +53,7 @@ public class Variable extends PLSQLStatement implements IVariable{
   }
 
   public int GetVariableType (StringBuffer type) {
-    if (variableType == null) return ErrorCode.EC_NULL_OBJECT;
-    if (variableType == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(variableName)) return ErrorCode.EC_NULL_OBJECT;
     try {
       type = new StringBuffer (variableType);
     } catch (Exception e) {

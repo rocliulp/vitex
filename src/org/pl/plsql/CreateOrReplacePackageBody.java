@@ -6,6 +6,7 @@ package org.pl.plsql;
 
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
+import org.pl.global.Global;
 
 public class CreateOrReplacePackageBody extends PLSQLBlock {
   /*
@@ -18,9 +19,7 @@ public class CreateOrReplacePackageBody extends PLSQLBlock {
    */
   public CreateOrReplacePackageBody (String name)
     throws NullParameterException {
-    if (name == null)
-      throw new NullParameterException ("CreateOrReplacePackageBody (~)");
-    if (name == "")
+    if (Global.IsStringNullOrEmpty(name))
       throw new NullParameterException ("CreateOrReplacePackageBody (~)");
     packageName = name;
   }

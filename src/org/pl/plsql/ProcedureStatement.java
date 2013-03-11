@@ -7,6 +7,7 @@ package org.pl.plsql;
 import org.pl.Object;
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
+import org.pl.global.Global;
 
 public class ProcedureStatement
 extends ParametersBlock implements IProcedureStatement {
@@ -19,9 +20,7 @@ extends ParametersBlock implements IProcedureStatement {
    * Constructor
    */
   public ProcedureStatement (String name) throws NullParameterException {
-    if (name == null)
-      throw new NullParameterException ("ProcedureStatement (~)");
-    if (name == "")
+    if (Global.IsStringNullOrEmpty(name))
       throw new NullParameterException ("ProcedureStatement (~)");
     procedureName = name;
   }
@@ -30,8 +29,7 @@ extends ParametersBlock implements IProcedureStatement {
    * IPLSQLStatement
    */
   public int GetSQL (StringBuffer sql) {
-    if (procedureName == null) return ErrorCode.EC_NULL_OBJECT;
-    if (procedureName == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(procedureName)) return ErrorCode.EC_NULL_OBJECT;
     String NEW_LINE = null;
     try {
       sql = new StringBuffer ();
@@ -70,8 +68,7 @@ extends ParametersBlock implements IProcedureStatement {
    * IProcedureStatement
    */
   public int GetProcedureName (StringBuffer name) {
-    if (procedureName == null) return ErrorCode.EC_NULL_OBJECT;
-    if (procedureName == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(procedureName)) return ErrorCode.EC_NULL_OBJECT;
     try {
       name = new StringBuffer (procedureName);
     } catch (Exception e) {

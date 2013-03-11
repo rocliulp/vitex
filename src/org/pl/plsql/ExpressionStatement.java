@@ -7,6 +7,7 @@ package org.pl.plsql;
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
 import org.pl.exception.OutOfMemoryException;
+import org.pl.global.Global;
 
 public class ExpressionStatement
 extends PLSQLBlock implements IExpressionStatement {
@@ -21,13 +22,9 @@ extends PLSQLBlock implements IExpressionStatement {
    */
   public ExpressionStatement (String result, String expression)
   throws NullParameterException, OutOfMemoryException {
-    if (result == null)
+    if (Global.IsStringNullOrEmpty(result))
       throw new NullParameterException ("ExpressionStatement (~)");
-    if (result == "")
-      throw new NullParameterException ("ExpressionStatement (~)");
-    if (expression == null)
-      throw new NullParameterException ("ExpressionStatement (~)");
-    if (expression == "")
+    if (Global.IsStringNullOrEmpty(expression))
       throw new NullParameterException ("ExpressionStatement (~)");
     try {
       this.result = result;
@@ -41,10 +38,8 @@ extends PLSQLBlock implements IExpressionStatement {
    * IPLSQLStatement
    */
   public int GetSQL (StringBuffer sql) {
-    if (result == null) return ErrorCode.EC_NULL_PARAMETER;
-    if (result == "") return ErrorCode.EC_NULL_PARAMETER;
-    if (expression == null) return ErrorCode.EC_NULL_PARAMETER;
-    if (expression == "") return ErrorCode.EC_NULL_PARAMETER;
+    if (Global.IsStringNullOrEmpty(result)) return ErrorCode.EC_NULL_PARAMETER;
+    if (Global.IsStringNullOrEmpty(expression)) return ErrorCode.EC_NULL_PARAMETER;
 
     String NEW_LINE = null;
     try {

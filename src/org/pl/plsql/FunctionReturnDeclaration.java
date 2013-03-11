@@ -6,6 +6,7 @@ package org.pl.plsql;
 
 import org.pl.ErrorCode;
 import org.pl.exception.NullParameterException;
+import org.pl.global.Global;
 
 public class FunctionReturnDeclaration
 extends PLSQLStatement implements IFunctionReturnDeclaration {
@@ -18,9 +19,7 @@ extends PLSQLStatement implements IFunctionReturnDeclaration {
    * Constructor
    */
   public FunctionReturnDeclaration (String type) throws NullParameterException {
-    if (type == null)
-      throw new NullParameterException ("FunctionReturnDeclaration (~)");
-    if (type == "")
+    if (Global.IsStringNullOrEmpty(type))
       throw new NullParameterException ("FunctionReturnDeclaration (~)");
     returnType = type;
   }
@@ -29,8 +28,7 @@ extends PLSQLStatement implements IFunctionReturnDeclaration {
    * IPLSQLStatement
    */
   public int GetSQL (StringBuffer sql) {
-    if (returnType == null) return ErrorCode.EC_NULL_OBJECT;
-    if (returnType == "") return ErrorCode.EC_NULL_OBJECT;
+    if (Global.IsStringNullOrEmpty(returnType)) return ErrorCode.EC_NULL_OBJECT;
     try {
       sql = new StringBuffer ();
       String line = String.format ("RETURN %s", returnType);
@@ -45,8 +43,7 @@ extends PLSQLStatement implements IFunctionReturnDeclaration {
    * IFunctionReturnDeclaration
    */
   public int GetReturnType (StringBuffer type) {
-    if (returnType == null) return ErrorCode.EC_NULL_PARAMETER;
-    if (returnType == "") return ErrorCode.EC_NULL_PARAMETER;
+    if (Global.IsStringNullOrEmpty(returnType)) return ErrorCode.EC_NULL_PARAMETER;
     try {
       type = new StringBuffer (returnType);
     } catch (Exception e) {
