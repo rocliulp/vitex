@@ -34,6 +34,8 @@ public final class ErrorCode extends Object {
   
   public static final int EC_DB_FAILED = 14;
 
+  public static final int EC_FAILED_FINDING_WEB_ELEMENT = 15;
+
 	public static void main (String args []) {
 		try {
 			ErrorCode ec = new ErrorCode ();
