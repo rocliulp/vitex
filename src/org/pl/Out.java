@@ -2,7 +2,7 @@
  * @author Paul
  */
 
-import org.pl.ErrorCode;
+package org.pl;
 
 public class Out <T> implements IOut <T> {
   /*
@@ -13,7 +13,7 @@ public class Out <T> implements IOut <T> {
   /*
    * IOut
    */
-  public int GetParam (T param) {
+  public T GetParam () {
     return param;
   }
 
