@@ -6,27 +6,33 @@ package org.pl.automation.web;
 
 import org.pl.ErrorCode;
 import org.pl.Out;
+import org.pl.exception.NullParameterException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public abstract class SeleniumDrivingPage extends Page
-implements ISeleniumDrivingPage, IPageFlowStatus {
+implements ISeleniumDrivingPage {
   /*
    * Private members
    */
   private WebDriver seleniumDriver = null;
-  private String xPath = null;
 
   /*
    * Constructor
    */
-  public SeleniumDrivingPage throws NullParameterException (
-    String url, WebDriver driver) {
-    super (url);
+  public SeleniumDrivingPage (WebDriver driver)
+		throws NullParameterException {
     if (driver == null)
       throw new NullParameterException ("SeleniumDrivingPage (~)");
     
     seleniumDriver = driver;
   }
+
+  /*
+   * IPage
+   */
+  public abstract int WaitForReady (int timeout, int sleep);
 
   /*
    * ISeleniumDrivingPage
@@ -37,17 +43,6 @@ implements ISeleniumDrivingPage, IPageFlowStatus {
 
     driver.SetParam (seleniumDriver);
 
-    return ErrorCode.EC_OK;
-  }
-
-  public abstract int PageflowIdentify;
-
-  /*
-   * IPageFlowStatus
-   */
-  public int GetXPath (Out <String> path) {
-    if (path == null) return ErrorCode.EC_NULL_PARAMETER;
-    path.SetParam (xPath);
     return ErrorCode.EC_OK;
   }
 }
