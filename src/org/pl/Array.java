@@ -6,7 +6,6 @@ public class Array <T> extends Object implements IArray <T> {
   /*
    * @ Private members
    */
-  private int capacity = 0;
   private int count = 0;
   private T [] array = null;
 
@@ -22,8 +21,11 @@ public class Array <T> extends Object implements IArray <T> {
 
   /*
    * @ IArray <T>
-  */
-	public int GetCapacity (java.lang.Integer capacity) {
+   */
+	public int GetCapacity (Out <java.lang.Integer> outCapacity) {
+    if (outCapacity == null) return ErrorCode.EC_NULL_PARAMETER;
+
+    java.lang.Integer capacity = null;
     if (array == null) {
       try {
         capacity = new java.lang.Integer (0);
@@ -33,36 +35,64 @@ public class Array <T> extends Object implements IArray <T> {
       }
     } else {
       try {
-        capacity = new java.lang.Integer (this.capacity);
+        capacity = new java.lang.Integer (array.length);
       } catch (Exception e) {
         capacity = null;
         return ErrorCode.EC_OUT_OF_MEMORY;
       }
     }
+    outCapacity.SetParam (capacity);
+
     return ErrorCode.EC_OK;
 	}
 
 	public int SetAt (T obj, int pos) {
-    if (pos < 0) return ErrorCode.EC_OUT_OF_RANGE;
-    if (pos > capacity - 1) return ErrorCode.EC_OUT_OF_RANGE;
+    Out <java.lang.Integer> outCount = new Out <java.lang.Integer> ();
+    int ret = GetCount (outCount);
+    if (ret != ErrorCode.EC_OK) return ret;
+    int count = outCount.GetParam ();
+    if (pos != count) return ret;
+
+    Out <java.lang.Integer> outCapacity = new Out <java.lang.Integer> ();
+    ret = GetCapacity (outCapacity);
+    if (ret != ErrorCode.EC_OK) return ret;
+    int capacity = outCapacity.GetParam ();
+    if (pos > capacity - 1) return ret;
+
     if (obj == null) return ErrorCode.EC_NULL_PARAMETER;
 
     array [pos] = obj;
+    ++ (this.count);
 		return ErrorCode.EC_OK;
 	}
 
   /*
    * @ IElementAccessible
-   * @ TODO: Check if this is necessary.
    */
-	public int GetCount (java.lang.Integer count) {
+	public int GetCount (Out <java.lang.Integer> outCount) {
+    if (outCount == null) return ErrorCode.EC_NULL_PARAMETER;
+
+    java.lang.Integer count = null;
+    try {
+      count = new java.lang.Integer (this.count);
+    } catch (Exception e) {
+      count = null;
+      return ErrorCode.EC_OUT_OF_MEMORY;
+    }
+    outCount.SetParam (count);
+
 		return GetCapacity (count);
 	}
 
-	public int GetAt (T obj, int pos) {
+	public int GetAt (Out <T> outObj, int pos) {
     if (pos < 0) return ErrorCode.EC_OUT_OF_RANGE;
-    if (pos > capacity - 1) return ErrorCode.EC_OUT_OF_RANGE;
-    obj = array [pos];
-		return ErrorCode.EC_NOT_IMPLEMENTED;
+    Out <java.lang.Integer> outCount = new Out <java.lang.Integer> ();
+    int ret = GetCount (outCount);
+    if (ret != ErrorCode.EC_OK) return ret;
+    int count = outCount.GetParam ();
+    if (pos > count - 1) return ErrorCode.EC_OUT_OF_RANGE;
+    
+    outObj.SetParam (array [pos]);
+		return ErrorCode.EC_OK;
 	}
 }
