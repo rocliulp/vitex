@@ -7,6 +7,12 @@ import org.pl.exception.OutOfRangeException;
 
 public class CollNode <T> extends Array <T> implements ILinkedListNode <T>{
   /*
+   * Private members
+   */
+  private CollNode <T> predecessor = null;
+  private CollNode <T> successor = null;
+
+  /*
    * @ Constructor
    */
   @SuppressWarnings ({"unchecked"})
