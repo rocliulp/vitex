@@ -31,10 +31,11 @@ public final class ErrorCode extends Object {
 
   public static final int EC_FAILED_READING_FILE = 12;
   public static final int EC_INVALID_FILE_FORMAT = 13;
+	public static final int EC_FILE_DOES_NOT_EXIST = 14;
   
-  public static final int EC_DB_FAILED = 14;
+  public static final int EC_DB_FAILED = 15;
 
-  public static final int EC_FAILED_FINDING_WEB_ELEMENT = 15;
+  public static final int EC_FAILED_FINDING_WEB_ELEMENT = 16;
 
 	public static void main (String args []) {
 		try {
