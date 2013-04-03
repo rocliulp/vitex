@@ -22,15 +22,20 @@ public class Iterator <T> extends Object implements IIterator <T> {
     if (eAccessor == null)
       throw new NullParameterException ("aAccesor is invalid.");
     
-    java.lang.Integer count = null;
-    int ret = eAccessor.GetCount (count);
-    if (ret != ErrorCode.EC_OK)
-      throw new Exception (ret, "Failed get the element count by iterator");
-    if (step > count)
-      throw new OutOfRangeException ("step or aAccessor is invalid.");
+    try {
+      Out <java.lang.Integer> outCount = null;
+      int ret = eAccessor.GetCount (outCount);
+      if (ret != ErrorCode.EC_OK)
+        throw new Exception (ret, "Failed get the element count by iterator");
+      java.lang.Integer count = outCount.GetParam ();
+      if (step > count)
+        throw new OutOfRangeException ("step or aAccessor is invalid.");
 
-    this.step = step;
-    eAccessor = eAccessor;
+      this.step = step;
+      eAccessor = eAccessor;
+    } catch (Exception e) {
+      throw e;
+    }
   }
 
   /*

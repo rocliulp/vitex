@@ -81,7 +81,7 @@ public class Array <T> extends Object implements IArray <T> {
     }
     outCount.SetParam (count);
 
-		return GetCapacity (count);
+		return ErrorCode.EC_OK;
 	}
 
 	public int GetAt (Out <T> outObj, int pos) {

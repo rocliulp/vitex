@@ -5,7 +5,8 @@ import org.pl.Array;
 import org.pl.ILinkedListNode;
 import org.pl.exception.OutOfRangeException;
 
-public class CollNode <T> extends Array <T> implements ILinkedListNode <T>{
+public class CollNode <T>
+extends Array <T> implements ILinkedListNode <CollNode <T>> {
   /*
    * Private members
    */
@@ -23,12 +24,12 @@ public class CollNode <T> extends Array <T> implements ILinkedListNode <T>{
   /*
    * @ interface ILinkedListNode
   */
-  public int GetPredecessor (ILinkedListNode <T> predecessor) {
+  public int GetPredecessor (CollNode <T> predecessor) {
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
 
-  public int GetSuccessor (ILinkedListNode <T> successor) {
+  public int GetSuccessor (CollNode <T> successor) {
     // TODO:
     return ErrorCode.EC_NOT_IMPLEMENTED;
   }
